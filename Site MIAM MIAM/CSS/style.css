@@ -1,0 +1,446 @@
+/* --- GLOBAL --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #fff;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Classe pour les pages Contact et FAQ (permet de coller le footer en bas) */
+body.layout-flex {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 100%;
+}
+
+/* --- NAV & HEADER COMMUN --- */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.brand-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+    color: #333;
+}
+
+.logo-icon {
+    max-height: 40px;
+    width: auto;
+}
+
+.brand-text {
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.avatar-icon {
+    max-height: 40px;
+    width: auto;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-left: 25px;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #fff;
+}
+
+.menu-toggle {
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #333;
+}
+
+/* --- HEADER SPECIFIQUE ACCUEIL --- */
+header.header-home {
+    background-color: #ffc20e;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+.navbar-home {
+    padding-top: 25px;
+}
+
+/* --- HEADER SPECIFIQUE COMPACT (Contact/FAQ) --- */
+header.header-compact {
+    background-color: #ffc20e;
+    padding: 15px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* --- HERO SECTION (ACCUEIL) --- */
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.hero-text h1 {
+    font-size: 4rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    line-height: 0.9;
+    color: #000;
+}
+
+.hero-text .script {
+    font-family: 'Dancing Script', cursive;
+    font-size: 3rem;
+    display: block;
+    margin-top: 10px;
+    text-transform: none;
+}
+
+.hero-image-wrapper {
+    position: relative;
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    min-width: 300px;
+}
+
+.hero-image-wrapper img {
+    max-width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: contain;
+    margin-right: -40px;
+}
+
+/* Pastille 5€ */
+.price-badge {
+    position: absolute;
+    bottom: 40px;
+    right: 320px;
+    background-color: #e74c3c;
+    color: white;
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 3px dashed #fff;
+    transform: rotate(-12deg);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.price-badge strong { font-size: 3rem; line-height: 1; }
+.price-badge span { font-size: 0.9rem; text-transform: uppercase; }
+
+/* --- GRILLE BURGERS (ACCUEIL) --- */
+.menu-grid {
+    padding: 40px 0;
+}
+
+.grid-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 300px 300px;
+    gap: 20px;
+}
+
+.card {
+    background-color: #0e0e0e;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+    opacity: 0.9;
+}
+
+.card:hover img {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+.card-title {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    color: white;
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    z-index: 5;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+}
+
+.card.large {
+    grid-row: 1 / 3;
+    grid-column: 1 / 2;
+}
+
+/* --- PAGES CONTENU (Contact & FAQ) --- */
+.content-section {
+    flex: 1;
+    padding: 60px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.page-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+    text-align: center;
+    letter-spacing: 1px;
+}
+
+/* Formulaire Contact */
+form {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.form-input {
+    width: 100%;
+    padding: 15px 25px;
+    border: 1px solid #888;
+    border-radius: 30px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    outline: none;
+    color: #555;
+    background-color: #fff;
+}
+
+.form-input::placeholder { color: #ccc; }
+.form-input:focus { border-color: #ffc20e; }
+
+textarea.form-input {
+    border-radius: 20px;
+    height: 250px;
+    resize: none;
+}
+
+/* FAQ List */
+.faq-list {
+    width: 100%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.faq-item {
+    width: 100%;
+    padding: 20px 30px;
+    border: 1px solid #777;
+    border-radius: 50px;
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    background-color: #fff;
+    color: #222;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.faq-item:hover {
+    background-color: #f9f9f9;
+    border-color: #ffc20e;
+}
+
+/* --- FOOTERS --- */
+
+/* Footer Accueil (Blanc) */
+.footer-home {
+    text-align: center;
+    padding-top: 50px;
+    padding-bottom: 0;
+    background: #fff;
+    width: 100%;
+}
+
+.footer-home h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+.footer-home p {
+    font-weight: 800;
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+.footer-image-full {
+    width: 100%;
+    height: 200px;
+    max-height: 250px;
+    object-fit: contain;
+    display: block;
+    margin-top: 20px;
+    background-color: #fff;
+}
+
+/* Footer Simple (Jaune - Contact/FAQ) */
+.footer-simple {
+    background-color: #ffc20e;
+    padding: 50px 0; /* Un peu plus de hauteur */
+    margin-top: auto;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end; /* Aligner en bas */
+}
+
+.footer-content h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    color: #000;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.footer-links a:hover { text-decoration: underline; }
+
+/* Petit ajout de marque dans le footer pour équilibrer */
+.footer-brand-mark {
+    font-weight: 900;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    opacity: 0.3; /* Un peu transparent pour rester discret */
+    letter-spacing: 2px;
+}
+
+/* --- RESPONSIVE MOBILE --- */
+@media (max-width: 768px) {
+    .navbar { flex-direction: column; gap: 15px; }
+    .nav-links a { margin: 0 10px; }
+    
+    .hero-text h1 { font-size: 2.5rem; }
+    .hero-image-wrapper img { max-height: 350px; margin-right: 0; }
+    
+    .grid-wrapper {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+    .card.large, .card {
+        height: 250px;
+        grid-column: auto;
+        grid-row: auto;
+    }
+    
+    .price-badge { 
+        right: 20px; bottom: 0px; 
+        width: 90px; height: 90px; 
+    }
+    .price-badge strong { font-size: 2rem; }
+
+    .footer-image-full { height: 200px;}
+
+    .page-title { font-size: 1.8rem; }
+    .form-input { padding: 12px 20px; }
+    textarea.form-input { height: 200px; }
+    .faq-item { font-size: 1rem; padding: 15px 20px; border-radius: 30px; }
+    
+    .footer-inner { flex-direction: column; align-items: flex-start; gap: 20px; }
+}
+
+/* --- MENU DÉROULANT (HAMBURGER) --- */
+
+/* Le conteneur du bouton et du menu */
+.menu-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Le menu lui-même (caché par défaut) */
+.dropdown-menu {
+    display: none; /* Caché */
+    position: absolute;
+    right: 0;
+    top: 40px; /* Juste en dessous de l'icône */
+    background-color: #fff;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 1000;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+}
+
+/* Les liens dans le menu */
+.dropdown-menu a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f1f1f1;
+    color: #ffc20e;
+}
+
+/* Classe ajoutée par JavaScript pour afficher le menu */
+.show {
+    display: block;
+}
