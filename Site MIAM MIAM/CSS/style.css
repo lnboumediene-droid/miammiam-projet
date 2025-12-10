@@ -316,11 +316,11 @@ textarea.form-input {
 
 .footer-image-full {
     width: 100%;
-    height: 200px;
-    max-height: 250px;
+    height: 1500px;
+    max-height: 2550px;
     object-fit: contain;
     display: block;
-    margin-top: 20px;
+    margin-top: -500px;
     background-color: #fff;
 }
 
